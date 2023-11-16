@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "archbtw",
+  "version": "${version}",
+
+  "name": "archbtw",
+  "description": "",
+  "authors": [],
+  "contact": {},
+
+  "license": "Apache-2.0",
+  "icon": "assets/archbtw/icon.png",
+
+  "environment": "*",
+  "entrypoints": {},
+
+      "mixins": [
+        "archbtw.mixins.json"
+      ],
+
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "minecraft": "${minecraft_version}"
+  }
+}
