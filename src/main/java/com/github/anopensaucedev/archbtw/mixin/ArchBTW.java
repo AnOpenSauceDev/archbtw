@@ -1,6 +1,4 @@
 package com.github.anopensaucedev.archbtw.mixin;
-
-import com.github.anopensaucedev.archbtw.client.ArchbtwClient;
 import com.github.anopensaucedev.libmcdevfabric.OSUtils;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
@@ -11,11 +9,11 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ClientPlayNetworkHandler.class)
-public class ClientNetworkHandlerMixin {
+public class ArchBTW {
 
     @Inject(method = "onChatMessage", at = @At("HEAD"))
     public void messageListener(ChatMessageS2CPacket packet, CallbackInfo ci){
-        if(packet.body().content().contains("Windows".toLowerCase()) || packet.body().content().contains("OS".toLowerCase())){ // if anyone mentions OS'es...
+        if(packet.body().content().toLowerCase().contains("Windows") || packet.body().content().toLowerCase().contains("OS".toLowerCase())){ // if anyone mentions OS'es...
             flexOS(); // flex your superior operating system.
         }
     }
